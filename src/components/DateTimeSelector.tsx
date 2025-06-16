@@ -1,6 +1,15 @@
 
-import React from 'react';
-import { Clock } from 'lucide-react';
+import React, { useState } from 'react';
+import { Calendar, Clock } from 'lucide-react';
+import { Button } from "@/components/ui/button";
+import { Calendar as CalendarComponent } from "@/components/ui/calendar";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { format } from "date-fns";
+import { cn } from "@/lib/utils";
 
 interface DateTimeSelectorProps {
   selectedDate: string;
@@ -10,84 +19,93 @@ interface DateTimeSelectorProps {
 }
 
 const DateTimeSelector = ({ selectedDate, selectedTime, onDateChange, onTimeChange }: DateTimeSelectorProps) => {
-  const today = new Date().toISOString().split('T')[0];
-  const now = new Date().toTimeString().slice(0, 5);
-
-  const dateOptions = [
-    { value: 'today', label: 'Today' },
-    { value: 'tomorrow', label: 'Tomorrow' },
-    { value: 'custom', label: 'Pick Date' },
-  ];
+  const [date, setDate] = useState<Date>();
+  const [isDateOpen, setIsDateOpen] = useState(false);
+  const [isTimeOpen, setIsTimeOpen] = useState(false);
 
   const timeOptions = [
     { value: 'now', label: 'Now' },
-    { value: 'morning', label: 'Morning' },
-    { value: 'afternoon', label: 'Afternoon' },
-    { value: 'evening', label: 'Evening' },
-    { value: 'custom', label: 'Pick Time' },
+    { value: '06:00', label: '6:00 AM' },
+    { value: '07:00', label: '7:00 AM' },
+    { value: '08:00', label: '8:00 AM' },
+    { value: '09:00', label: '9:00 AM' },
+    { value: '10:00', label: '10:00 AM' },
+    { value: '11:00', label: '11:00 AM' },
+    { value: '12:00', label: '12:00 PM' },
+    { value: '13:00', label: '1:00 PM' },
+    { value: '14:00', label: '2:00 PM' },
+    { value: '15:00', label: '3:00 PM' },
+    { value: '16:00', label: '4:00 PM' },
+    { value: '17:00', label: '5:00 PM' },
+    { value: '18:00', label: '6:00 PM' },
   ];
 
-  const handleDateSelect = (option: string) => {
-    if (option === 'today') {
-      onDateChange('Today');
-    } else if (option === 'tomorrow') {
-      onDateChange('Tomorrow');
-    } else {
-      onDateChange('Pick Date');
+  const handleDateSelect = (selectedDate: Date | undefined) => {
+    setDate(selectedDate);
+    if (selectedDate) {
+      onDateChange(format(selectedDate, "PPP"));
     }
+    setIsDateOpen(false);
   };
 
-  const handleTimeSelect = (option: string) => {
-    if (option === 'now') {
-      onTimeChange('Now');
-    } else if (option === 'morning') {
-      onTimeChange('Morning (6-12 AM)');
-    } else if (option === 'afternoon') {
-      onTimeChange('Afternoon (12-6 PM)');
-    } else if (option === 'evening') {
-      onTimeChange('Evening (6-12 PM)');
-    } else {
-      onTimeChange('Pick Time');
-    }
+  const handleTimeSelect = (time: string, label: string) => {
+    onTimeChange(label);
+    setIsTimeOpen(false);
   };
 
   return (
     <div className="grid grid-cols-2 gap-4">
       {/* Date Selector */}
-      <div className="relative">
-        <select
-          value={selectedDate}
-          onChange={(e) => handleDateSelect(e.target.value)}
-          className="w-full flex items-center space-x-2 bg-gray-50 p-3 rounded appearance-none cursor-pointer border-none outline-none"
-        >
-          {dateOptions.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.label}
-            </option>
-          ))}
-        </select>
-        <div className="absolute left-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
-          <Clock className="w-5 h-5 text-gray-400" />
-        </div>
-      </div>
+      <Popover open={isDateOpen} onOpenChange={setIsDateOpen}>
+        <PopoverTrigger asChild>
+          <Button
+            variant="outline"
+            className={cn(
+              "w-full justify-start text-left font-normal bg-gray-50 border-none hover:bg-gray-100",
+              !date && "text-muted-foreground"
+            )}
+          >
+            <Calendar className="mr-2 h-4 w-4" />
+            {date ? format(date, "PPP") : <span>Today</span>}
+          </Button>
+        </PopoverTrigger>
+        <PopoverContent className="w-auto p-0" align="start">
+          <CalendarComponent
+            mode="single"
+            selected={date}
+            onSelect={handleDateSelect}
+            initialFocus
+            className="pointer-events-auto"
+          />
+        </PopoverContent>
+      </Popover>
 
       {/* Time Selector */}
-      <div className="relative">
-        <select
-          value={selectedTime}
-          onChange={(e) => handleTimeSelect(e.target.value)}
-          className="w-full flex items-center space-x-2 bg-gray-50 p-3 rounded appearance-none cursor-pointer border-none outline-none"
-        >
-          {timeOptions.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.label}
-            </option>
-          ))}
-        </select>
-        <div className="absolute left-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
-          <Clock className="w-5 h-5 text-gray-400" />
-        </div>
-      </div>
+      <Popover open={isTimeOpen} onOpenChange={setIsTimeOpen}>
+        <PopoverTrigger asChild>
+          <Button
+            variant="outline"
+            className="w-full justify-start text-left font-normal bg-gray-50 border-none hover:bg-gray-100"
+          >
+            <Clock className="mr-2 h-4 w-4" />
+            {selectedTime || 'Now'}
+          </Button>
+        </PopoverTrigger>
+        <PopoverContent className="w-auto p-0" align="start">
+          <div className="max-h-60 overflow-y-auto">
+            {timeOptions.map((option) => (
+              <Button
+                key={option.value}
+                variant="ghost"
+                className="w-full justify-start"
+                onClick={() => handleTimeSelect(option.value, option.label)}
+              >
+                {option.label}
+              </Button>
+            ))}
+          </div>
+        </PopoverContent>
+      </Popover>
     </div>
   );
 };

@@ -1,7 +1,8 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-import { MapPin } from 'lucide-react';
+import { MapPin, Search } from 'lucide-react';
 import { useLocationSearch } from '@/hooks/useLocationSearch';
+import { Button } from "@/components/ui/button";
 
 interface LocationInputProps {
   value: string;
@@ -47,10 +48,28 @@ const LocationInput = ({ value, onChange, placeholder = "Where are you going?" }
     setIsOpen(false);
   };
 
+  const getCurrentLocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          // For demo purposes, we'll just show coordinates
+          onChange(`Current Location (${latitude.toFixed(2)}, ${longitude.toFixed(2)})`);
+        },
+        (error) => {
+          console.error('Error getting location:', error);
+          onChange('Unable to get current location');
+        }
+      );
+    } else {
+      onChange('Geolocation not supported');
+    }
+  };
+
   return (
     <div className="relative">
-      <div className="flex items-center space-x-2">
-        <MapPin className="w-5 h-5 text-gray-400" />
+      <div className="flex items-center bg-gray-50 rounded-lg px-4 py-3 border-none">
+        <Search className="w-5 h-5 text-gray-400 mr-3" />
         <input
           ref={inputRef}
           type="text"
@@ -60,12 +79,21 @@ const LocationInput = ({ value, onChange, placeholder = "Where are you going?" }
           placeholder={placeholder}
           className="flex-1 border-none outline-none text-gray-900 placeholder-gray-500 bg-transparent"
         />
+        <Button
+          type="button"
+          variant="ghost"
+          size="sm"
+          onClick={getCurrentLocation}
+          className="text-tumaride-600 hover:text-tumaride-700 p-1"
+        >
+          <MapPin className="w-4 h-4" />
+        </Button>
       </div>
 
       {isOpen && (query.length >= 3) && (
         <div
           ref={dropdownRef}
-          className="absolute top-full left-0 right-0 bg-white border border-gray-200 rounded-lg shadow-lg z-10 mt-1 max-h-48 overflow-y-auto"
+          className="absolute top-full left-0 right-0 bg-white border border-gray-200 rounded-lg shadow-lg z-50 mt-1 max-h-48 overflow-y-auto"
         >
           {isLoading ? (
             <div className="p-3 text-gray-500 text-sm">Searching...</div>
