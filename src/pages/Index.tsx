@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { MapPin, Smartphone, CreditCard, Users, Star, Clock, Shield, Zap, Download, Play } from "lucide-react";
+import { MapPin, Smartphone, CreditCard, Users, Star, Clock, Shield, Zap, Download, Play, Send } from "lucide-react";
 
 const Index = () => {
   return (
@@ -20,39 +20,55 @@ const Index = () => {
           </div>
           <div className="flex items-center space-x-4">
             <Button className="bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
-              <Download className="w-4 h-4 mr-2" />
-              Download App
+              Join our waitlist
             </Button>
           </div>
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="bg-tumaride-gradient py-20 lg:py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="container mx-auto px-4 relative z-10">
+      {/* Hero Section - Similar to Moova */}
+      <section className="py-20 lg:py-32 relative overflow-hidden">
+        <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="text-white animate-slide-in-left">
-              <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+            <div className="animate-slide-in-left">
+              <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight text-gray-900">
                 Monetize your Movement with TumaRide
               </h1>
-              <p className="text-xl lg:text-2xl mb-4 text-green-100">
-                Kila Safari Ina Thamani
+              <p className="text-lg mb-8 text-gray-600 max-w-lg">
+                Whenever you're heading somewhere on public transport, earn money by helping others move things effortlessly.
               </p>
-              <p className="text-lg mb-8 text-green-100 max-w-lg">
-                Transform every journey into an earning opportunity. Connect with travelers and deliver items across Kenya with ease.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-white text-tumaride-600 hover:bg-gray-100 text-lg px-8 py-3">
-                  <Play className="w-5 h-5 mr-2" />
-                  Get it on Google Play
-                </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-tumaride-600 text-lg px-8 py-3">
-                  <Smartphone className="w-5 h-5 mr-2" />
-                  Download on App Store
+              
+              {/* Waitlist Form */}
+              <div className="bg-white rounded-lg border border-gray-200 p-6 mb-6 max-w-md">
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-2">
+                    <MapPin className="w-5 h-5 text-gray-400" />
+                    <input 
+                      type="text" 
+                      placeholder="Where are you going?" 
+                      className="flex-1 border-none outline-none text-gray-900 placeholder-gray-500"
+                    />
+                    <Send className="w-5 h-5 text-tumaride-600" />
+                  </div>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="flex items-center space-x-2 bg-gray-50 p-3 rounded">
+                      <Clock className="w-5 h-5 text-gray-400" />
+                      <span className="text-gray-600">Today</span>
+                    </div>
+                    <div className="flex items-center space-x-2 bg-gray-50 p-3 rounded">
+                      <Clock className="w-5 h-5 text-gray-400" />
+                      <span className="text-gray-600">Now</span>
+                    </div>
+                  </div>
+                </div>
+                <Button className="w-full mt-4 bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
+                  Join our waitlist
                 </Button>
               </div>
-              <p className="text-sm text-green-200 mt-4">Available on iOS and Android</p>
+              
+              <p className="text-sm text-gray-500">
+                Kila Safari Ina Thamani - Value in every stop
+              </p>
             </div>
             <div className="animate-slide-in-right">
               <div className="relative">
@@ -68,49 +84,117 @@ const Index = () => {
         </div>
       </section>
 
-      {/* App Showcase Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              A New Perspective on Peer-to-Peer Delivery
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
-              Experience seamless delivery connections across Kenya with our mobile app
-            </p>
-            <Button size="lg" className="bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
-              <Download className="w-5 h-5 mr-2" />
-              Download TumaRide App
-            </Button>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="animate-slide-in-left">
+      {/* Marketplace Section */}
+      <section className="py-20 bg-tumaride-gradient relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="text-white">
+              <div className="inline-block bg-white/20 rounded-full px-4 py-2 text-sm mb-6">
+                FOR MOVERS: TURN YOUR TRIPS INTO INCOME
+              </div>
+              <h2 className="text-3xl lg:text-5xl font-bold mb-6">
+                A Marketplace Where Every Journey Earns
+              </h2>
+              <p className="text-xl text-green-100 mb-8">
+                We connect people who are already moving with those that need things to move
+              </p>
+              <Button size="lg" className="bg-white text-tumaride-600 hover:bg-gray-100">
+                Download TumaRide App
+              </Button>
+            </div>
+            <div>
               <img 
                 src="https://images.unsplash.com/photo-1466721591366-2d5fba72006d?auto=format&fit=crop&w=600&q=80" 
                 alt="Kenya transport hub"
+                className="rounded-2xl shadow-2xl w-full h-auto"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Benefits Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-16">Key benefits</h2>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="p-8 hover:shadow-lg transition-shadow">
+              <div className="mb-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Earn</h3>
+                <p className="text-gray-600 mb-6">
+                  Earn extra money as you move—no bike or car required
+                </p>
+                <Button className="bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
+                  Get App
+                </Button>
+              </div>
+              <div className="flex justify-end">
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
+                  <CreditCard className="w-8 h-8 text-green-600" />
+                </div>
+              </div>
+            </Card>
+
+            <Card className="p-8 hover:shadow-lg transition-shadow">
+              <div className="mb-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Fast</h3>
+                <p className="text-gray-600 mb-6">
+                  Receive instant payouts after successful trips.
+                </p>
+                <Button className="bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
+                  Get App
+                </Button>
+              </div>
+              <div className="flex justify-end">
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
+                  <Zap className="w-8 h-8 text-blue-600" />
+                </div>
+              </div>
+            </Card>
+
+            <Card className="p-8 hover:shadow-lg transition-shadow">
+              <div className="mb-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Flexible</h3>
+                <p className="text-gray-600 mb-6">
+                  No fixed schedule—pick up orders whenever you need to move
+                </p>
+                <Button className="bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
+                  Get App
+                </Button>
+              </div>
+              <div className="flex justify-end">
+                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center">
+                  <Clock className="w-8 h-8 text-purple-600" />
+                </div>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Get Paid to Move Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <img 
+                src="https://images.unsplash.com/photo-1452378174528-3090a4bba7b2?auto=format&fit=crop&w=600&q=80" 
+                alt="Public transport in Kenya"
                 className="rounded-2xl shadow-lg w-full h-auto"
               />
             </div>
-            <div className="animate-slide-in-right">
-              <div className="grid grid-cols-2 gap-8">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-tumaride-600 mb-2">1000+</div>
-                  <div className="text-gray-600">Active Movers</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-tumaride-600 mb-2">5000+</div>
-                  <div className="text-gray-600">Deliveries Made</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-tumaride-600 mb-2">50+</div>
-                  <div className="text-gray-600">Cities Covered</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-tumaride-600 mb-2">4.8★</div>
-                  <div className="text-gray-600">User Rating</div>
-                </div>
-              </div>
+            <div>
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+                Get Paid to Move. No Extra Effort Needed.
+              </h2>
+              <p className="text-lg text-gray-600 mb-8">
+                Already going somewhere? Get matched with small delivery requests along your route and earn
+              </p>
+              <Button size="lg" className="bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
+                Download TumaRide App
+              </Button>
             </div>
           </div>
         </div>
@@ -119,54 +203,55 @@ const Index = () => {
       {/* How It Works Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">How It Works</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
-              Simple steps to start earning or getting your items delivered
-            </p>
-            <Button size="lg" className="bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
-              <Play className="w-5 h-5 mr-2" />
-              Download & Get Started
-            </Button>
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-16 text-center">How it works</h2>
+
+          <div className="max-w-4xl mx-auto space-y-6">
+            <div className="bg-gray-50 rounded-lg p-6 flex items-start space-x-4">
+              <div className="w-12 h-12 bg-tumaride-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                <span className="text-xl font-bold text-white">1</span>
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Sign up & Verify</h3>
+                <p className="text-gray-600">Join our community with quick KYC verification.</p>
+              </div>
+            </div>
+
+            <div className="bg-gray-50 rounded-lg p-6 flex items-start space-x-4">
+              <div className="w-12 h-12 bg-tumaride-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                <span className="text-xl font-bold text-white">2</span>
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Get Matched</h3>
+                <p className="text-gray-600">Receive package requests that align with your daily route.</p>
+              </div>
+            </div>
+
+            <div className="bg-gray-50 rounded-lg p-6 flex items-start space-x-4">
+              <div className="w-12 h-12 bg-tumaride-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                <span className="text-xl font-bold text-white">3</span>
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Pick Up & Drop Off</h3>
+                <p className="text-gray-600">Earn money just by moving naturally.</p>
+              </div>
+            </div>
+
+            <div className="bg-gray-50 rounded-lg p-6 flex items-start space-x-4">
+              <div className="w-12 h-12 bg-tumaride-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                <span className="text-xl font-bold text-white">4</span>
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Instant Payouts</h3>
+                <p className="text-gray-600">Withdraw earnings easily after each successful trip.</p>
+              </div>
+            </div>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8 mb-16">
-            {/* Step Cards */}
-            <Card className="p-8 text-center hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold text-blue-600">1</span>
-              </div>
-              <h3 className="text-xl font-bold mb-4">Download App</h3>
-              <p className="text-gray-600 mb-6">Get TumaRide from your app store and create your account</p>
-              <Button variant="outline" className="w-full">
-                <Download className="w-4 h-4 mr-2" />
-                Get App
-              </Button>
-            </Card>
-
-            <Card className="p-8 text-center hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-tumaride-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold text-tumaride-600">2</span>
-              </div>
-              <h3 className="text-xl font-bold mb-4">Set Your Route</h3>
-              <p className="text-gray-600 mb-6">Post your delivery request or set your travel route</p>
-              <Button variant="outline" className="w-full">
-                <MapPin className="w-4 h-4 mr-2" />
-                Start Journey
-              </Button>
-            </Card>
-
-            <Card className="p-8 text-center hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold text-green-600">3</span>
-              </div>
-              <h3 className="text-xl font-bold mb-4">Earn Money</h3>
-              <p className="text-gray-600 mb-6">Complete deliveries and get paid instantly via M-Pesa</p>
-              <Button variant="outline" className="w-full">
-                <CreditCard className="w-4 h-4 mr-2" />
-                Get Paid
-              </Button>
-            </Card>
+          <div className="text-center mt-12">
+            <Button size="lg" className="bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
+              <Download className="w-5 h-5 mr-2" />
+              Download TumaRide App
+            </Button>
           </div>
         </div>
       </section>
