@@ -1,8 +1,20 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useForm } from "react-hook-form";
@@ -24,7 +36,12 @@ interface WaitlistFormProps {
   selectedTime?: string;
 }
 
-const WaitlistForm = ({ children, destination, selectedDate, selectedTime }: WaitlistFormProps) => {
+const WaitlistForm = ({
+  children,
+  destination,
+  selectedDate,
+  selectedTime,
+}: WaitlistFormProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -40,9 +57,8 @@ const WaitlistForm = ({ children, destination, selectedDate, selectedTime }: Wai
 
   const onSubmit = async (data: WaitlistFormData) => {
     setIsSubmitting(true);
-    
+
     try {
-      // Simulate storing to Excel sheet (in a real app, you'd connect to a backend service)
       const waitlistData = {
         ...data,
         destination: destination || 'Not specified',
@@ -52,8 +68,7 @@ const WaitlistForm = ({ children, destination, selectedDate, selectedTime }: Wai
       };
 
       console.log('Waitlist submission:', waitlistData);
-      
-      // Simulate API call delay
+
       await new Promise(resolve => setTimeout(resolve, 1500));
 
       toast({
@@ -79,13 +94,13 @@ const WaitlistForm = ({ children, destination, selectedDate, selectedTime }: Wai
       <DialogTrigger asChild>
         {children}
       </DialogTrigger>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="sm:max-w-md max-h-screen overflow-y-auto scrollbar-thin p-6">
         <DialogHeader>
           <DialogTitle className="text-center text-xl font-bold text-gray-900">
             Join TumaRide Waitlist
           </DialogTitle>
         </DialogHeader>
-        
+
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
             <FormField
@@ -106,12 +121,12 @@ const WaitlistForm = ({ children, destination, selectedDate, selectedTime }: Wai
             <FormField
               control={form.control}
               name="email"
-              rules={{ 
+              rules={{
                 required: "Email is required",
                 pattern: {
                   value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                  message: "Invalid email address"
-                }
+                  message: "Invalid email address",
+                },
               }}
               render={({ field }) => (
                 <FormItem>
@@ -186,8 +201,8 @@ const WaitlistForm = ({ children, destination, selectedDate, selectedTime }: Wai
               </div>
             )}
 
-            <Button 
-              type="submit" 
+            <Button
+              type="submit"
               className="w-full bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white"
               disabled={isSubmitting}
             >

@@ -35,6 +35,16 @@ const Index = () => {
               </Button> 
             </WaitlistForm>
           </div>
+          <div className="hidden lg:flex items-center space-x-4">
+            <AppDownloadButton className="bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
+              <Smartphone className="w-5 h-5 mr-2" />
+              Download App
+            </AppDownloadButton>
+            <AppDownloadButton className="bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
+              <Play className="w-5 h-5 mr-2" />
+              Get it on Google Play
+            </AppDownloadButton>
+          </div>
         </div>
       </header>
 
