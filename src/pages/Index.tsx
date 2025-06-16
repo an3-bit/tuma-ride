@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { MapPin, Smartphone, CreditCard, Users, Star, Clock, Shield, Zap } from "lucide-react";
+import { MapPin, Smartphone, CreditCard, Users, Star, Clock, Shield, Zap, Download, Play } from "lucide-react";
 
 const Index = () => {
   return (
@@ -18,14 +18,12 @@ const Index = () => {
               <p className="text-xs text-tumaride-600">Value in every stop</p>
             </div>
           </div>
-          <nav className="hidden md:flex items-center space-x-8">
-            <a href="#how-it-works" className="text-gray-600 hover:text-tumaride-600 transition-colors">How It Works</a>
-            <a href="#examples" className="text-gray-600 hover:text-tumaride-600 transition-colors">Examples</a>
-            <a href="#about" className="text-gray-600 hover:text-tumaride-600 transition-colors">About</a>
+          <div className="flex items-center space-x-4">
             <Button className="bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
-              Get Started
+              <Download className="w-4 h-4 mr-2" />
+              Download App
             </Button>
-          </nav>
+          </div>
         </div>
       </header>
 
@@ -36,169 +34,159 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-white animate-slide-in-left">
               <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
-                Transforming movement into an income opportunity
+                Monetize your Movement with TumaRide
               </h1>
               <p className="text-xl lg:text-2xl mb-4 text-green-100">
                 Kila Safari Ina Thamani
               </p>
               <p className="text-lg mb-8 text-green-100 max-w-lg">
-                Connect with travelers already on your route. Turn every journey into an earning opportunity across Kenya and beyond.
+                Transform every journey into an earning opportunity. Connect with travelers and deliver items across Kenya with ease.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="bg-white text-tumaride-600 hover:bg-gray-100 text-lg px-8 py-3">
-                  <Smartphone className="w-5 h-5 mr-2" />
-                  Download App
+                  <Play className="w-5 h-5 mr-2" />
+                  Get it on Google Play
                 </Button>
                 <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-tumaride-600 text-lg px-8 py-3">
-                  Learn More
+                  <Smartphone className="w-5 h-5 mr-2" />
+                  Download on App Store
                 </Button>
               </div>
+              <p className="text-sm text-green-200 mt-4">Available on iOS and Android</p>
             </div>
             <div className="animate-slide-in-right">
-              <img 
-                src="https://images.unsplash.com/photo-1469041797191-50ace28483c3?auto=format&fit=crop&w=800&q=80" 
-                alt="African transportation"
-                className="rounded-2xl shadow-2xl w-full h-auto"
-              />
+              <div className="relative">
+                <img 
+                  src="https://images.unsplash.com/photo-1469041797191-50ace28483c3?auto=format&fit=crop&w=800&q=80" 
+                  alt="African transportation"
+                  className="rounded-2xl shadow-2xl w-full h-auto"
+                />
+                <div className="absolute inset-0 bg-tumaride-600/20 rounded-2xl"></div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-gray-50">
+      {/* App Showcase Section */}
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center animate-fade-in">
-              <div className="text-3xl lg:text-4xl font-bold text-tumaride-600 mb-2">1000+</div>
-              <div className="text-gray-600">Active Movers</div>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              A New Perspective on Peer-to-Peer Delivery
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+              Experience seamless delivery connections across Kenya with our mobile app
+            </p>
+            <Button size="lg" className="bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
+              <Download className="w-5 h-5 mr-2" />
+              Download TumaRide App
+            </Button>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="animate-slide-in-left">
+              <img 
+                src="https://images.unsplash.com/photo-1466721591366-2d5fba72006d?auto=format&fit=crop&w=600&q=80" 
+                alt="Kenya transport hub"
+                className="rounded-2xl shadow-lg w-full h-auto"
+              />
             </div>
-            <div className="text-center animate-fade-in">
-              <div className="text-3xl lg:text-4xl font-bold text-tumaride-600 mb-2">5000+</div>
-              <div className="text-gray-600">Deliveries Made</div>
-            </div>
-            <div className="text-center animate-fade-in">
-              <div className="text-3xl lg:text-4xl font-bold text-tumaride-600 mb-2">50+</div>
-              <div className="text-gray-600">Cities Covered</div>
-            </div>
-            <div className="text-center animate-fade-in">
-              <div className="text-3xl lg:text-4xl font-bold text-tumaride-600 mb-2">4.8★</div>
-              <div className="text-gray-600">User Rating</div>
+            <div className="animate-slide-in-right">
+              <div className="grid grid-cols-2 gap-8">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-tumaride-600 mb-2">1000+</div>
+                  <div className="text-gray-600">Active Movers</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-tumaride-600 mb-2">5000+</div>
+                  <div className="text-gray-600">Deliveries Made</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-tumaride-600 mb-2">50+</div>
+                  <div className="text-gray-600">Cities Covered</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-tumaride-600 mb-2">4.8★</div>
+                  <div className="text-gray-600">User Rating</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* How It Works Section */}
-      <section id="how-it-works" className="py-20">
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">How It Works</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
               Simple steps to start earning or getting your items delivered
             </p>
+            <Button size="lg" className="bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
+              <Play className="w-5 h-5 mr-2" />
+              Download & Get Started
+            </Button>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16">
-            {/* For Senders */}
-            <div className="animate-slide-in-left">
-              <div className="bg-blue-50 rounded-2xl p-8">
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mr-4">
-                    <Smartphone className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">For Senders</h3>
-                </div>
-                <div className="space-y-6">
-                  <div className="flex items-start">
-                    <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-4 mt-1">1</div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">Open the app or web platform</h4>
-                      <p className="text-gray-600">Quick and easy access from any device</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-4 mt-1">2</div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">Post delivery request</h4>
-                      <p className="text-gray-600">Item details, pickup, drop-off, and deadline</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-4 mt-1">3</div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">Choose your mover</h4>
-                      <p className="text-gray-600">Based on price, route, and rating</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm mr-4 mt-1">4</div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">Pay securely</h4>
-                      <p className="text-gray-600">Via M-Pesa or card payment</p>
-                    </div>
-                  </div>
-                </div>
+          <div className="grid lg:grid-cols-3 gap-8 mb-16">
+            {/* Step Cards */}
+            <Card className="p-8 text-center hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl font-bold text-blue-600">1</span>
               </div>
-            </div>
+              <h3 className="text-xl font-bold mb-4">Download App</h3>
+              <p className="text-gray-600 mb-6">Get TumaRide from your app store and create your account</p>
+              <Button variant="outline" className="w-full">
+                <Download className="w-4 h-4 mr-2" />
+                Get App
+              </Button>
+            </Card>
 
-            {/* For Movers */}
-            <div className="animate-slide-in-right">
-              <div className="bg-tumaride-50 rounded-2xl p-8">
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-tumaride-600 rounded-xl flex items-center justify-center mr-4">
-                    <MapPin className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">For Movers</h3>
-                </div>
-                <div className="space-y-6">
-                  <div className="flex items-start">
-                    <div className="w-8 h-8 bg-tumaride-600 rounded-full flex items-center justify-center text-white font-bold text-sm mr-4 mt-1">1</div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">Set your route</h4>
-                      <p className="text-gray-600">e.g., Nairobi → Kisumu</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-8 h-8 bg-tumaride-600 rounded-full flex items-center justify-center text-white font-bold text-sm mr-4 mt-1">2</div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">Get matched</h4>
-                      <p className="text-gray-600">With items needing delivery along your path</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-8 h-8 bg-tumaride-600 rounded-full flex items-center justify-center text-white font-bold text-sm mr-4 mt-1">3</div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">Accept and deliver</h4>
-                      <p className="text-gray-600">Complete the delivery safely</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="w-8 h-8 bg-tumaride-600 rounded-full flex items-center justify-center text-white font-bold text-sm mr-4 mt-1">4</div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">Get paid instantly</h4>
-                      <p className="text-gray-600">Via M-Pesa upon delivery confirmation</p>
-                    </div>
-                  </div>
-                </div>
+            <Card className="p-8 text-center hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-tumaride-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl font-bold text-tumaride-600">2</span>
               </div>
-            </div>
+              <h3 className="text-xl font-bold mb-4">Set Your Route</h3>
+              <p className="text-gray-600 mb-6">Post your delivery request or set your travel route</p>
+              <Button variant="outline" className="w-full">
+                <MapPin className="w-4 h-4 mr-2" />
+                Start Journey
+              </Button>
+            </Card>
+
+            <Card className="p-8 text-center hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl font-bold text-green-600">3</span>
+              </div>
+              <h3 className="text-xl font-bold mb-4">Earn Money</h3>
+              <p className="text-gray-600 mb-6">Complete deliveries and get paid instantly via M-Pesa</p>
+              <Button variant="outline" className="w-full">
+                <CreditCard className="w-4 h-4 mr-2" />
+                Get Paid
+              </Button>
+            </Card>
           </div>
         </div>
       </section>
 
       {/* Real-Life Examples Section */}
-      <section id="examples" className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Real-Life Examples</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Real Success Stories</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
               See how TumaRide is transforming lives across Kenya
             </p>
+            <Button size="lg" className="bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
+              <Smartphone className="w-5 h-5 mr-2" />
+              Join Them Today
+            </Button>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
-            <Card className="overflow-hidden hover:shadow-lg transition-shadow animate-fade-in">
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="h-48 bg-gradient-to-br from-blue-500 to-blue-600 relative">
                 <img 
                   src="https://images.unsplash.com/photo-1452378174528-3090a4bba7b2?auto=format&fit=crop&w=400&q=80" 
@@ -212,16 +200,20 @@ const Index = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Student Journey</h3>
                 <p className="text-gray-600 mb-4">
-                  A university student heading home from Nairobi to Eldoret carries a parcel for someone and earns KES 500.
+                  A university student heading home from Nairobi to Eldoret carries a parcel and earns KES 500.
                 </p>
-                <div className="flex items-center text-sm text-gray-500">
+                <div className="flex items-center text-sm text-gray-500 mb-4">
                   <MapPin className="w-4 h-4 mr-1" />
                   Nairobi → Eldoret
                 </div>
+                <Button className="w-full bg-tumaride-gradient text-white">
+                  <Download className="w-4 h-4 mr-2" />
+                  Start Earning
+                </Button>
               </CardContent>
             </Card>
 
-            <Card className="overflow-hidden hover:shadow-lg transition-shadow animate-fade-in">
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="h-48 bg-gradient-to-br from-tumaride-500 to-tumaride-600 relative">
                 <img 
                   src="https://images.unsplash.com/photo-1466721591366-2d5fba72006d?auto=format&fit=crop&w=400&q=80" 
@@ -235,16 +227,20 @@ const Index = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Boda Rider</h3>
                 <p className="text-gray-600 mb-4">
-                  A boda rider in Kisumu delivers groceries within town and earns more daily through multiple deliveries.
+                  A boda rider in Kisumu delivers groceries within town and earns more daily.
                 </p>
-                <div className="flex items-center text-sm text-gray-500">
+                <div className="flex items-center text-sm text-gray-500 mb-4">
                   <MapPin className="w-4 h-4 mr-1" />
                   Within Kisumu
                 </div>
+                <Button className="w-full bg-tumaride-gradient text-white">
+                  <Download className="w-4 h-4 mr-2" />
+                  Download App
+                </Button>
               </CardContent>
             </Card>
 
-            <Card className="overflow-hidden hover:shadow-lg transition-shadow animate-fade-in">
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="h-48 bg-gradient-to-br from-purple-500 to-purple-600 relative">
                 <div className="absolute top-4 right-4 bg-white rounded-full px-3 py-1 text-sm font-bold text-tumaride-600">
                   Express
@@ -253,12 +249,16 @@ const Index = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Business Documents</h3>
                 <p className="text-gray-600 mb-4">
-                  A businessperson in Mombasa sends urgent documents to a client via a verified matatu headed to Nairobi.
+                  A businessperson sends urgent documents via a verified matatu to Nairobi.
                 </p>
-                <div className="flex items-center text-sm text-gray-500">
+                <div className="flex items-center text-sm text-gray-500 mb-4">
                   <MapPin className="w-4 h-4 mr-1" />
                   Mombasa → Nairobi
                 </div>
+                <Button className="w-full bg-tumaride-gradient text-white">
+                  <Download className="w-4 h-4 mr-2" />
+                  Get Started
+                </Button>
               </CardContent>
             </Card>
           </div>
@@ -269,49 +269,57 @@ const Index = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Why Choose TumaRide?</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Why use TumaRide?</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
               Built for the African context with features that matter
             </p>
+            <Button size="lg" className="bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
+              <Play className="w-5 h-5 mr-2" />
+              Experience TumaRide
+            </Button>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center animate-fade-in">
-              <div className="w-16 h-16 bg-tumaride-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+              <div className="w-16 h-16 bg-tumaride-100 rounded-2xl flex items-center justify-center mb-6">
                 <Shield className="w-8 h-8 text-tumaride-600" />
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Verified Users</h3>
-              <p className="text-gray-600">All movers are verified for your safety and peace of mind</p>
+              <h3 className="text-lg font-bold text-gray-900 mb-4">Verified Users</h3>
+              <p className="text-gray-600 mb-6">All movers are verified for your safety and peace of mind</p>
+              <Button variant="outline" className="w-full">
+                <Download className="w-4 h-4 mr-2" />
+                Download App
+              </Button>
             </div>
 
-            <div className="text-center animate-fade-in">
-              <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+              <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
                 <CreditCard className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">M-Pesa Integration</h3>
-              <p className="text-gray-600">Seamless payments through M-Pesa and other local options</p>
+              <h3 className="text-lg font-bold text-gray-900 mb-4">M-Pesa Integration</h3>
+              <p className="text-gray-600 mb-6">Seamless payments through M-Pesa and other local options</p>
+              <Button variant="outline" className="w-full">
+                <Download className="w-4 h-4 mr-2" />
+                Get Started
+              </Button>
             </div>
 
-            <div className="text-center animate-fade-in">
-              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6">
                 <Clock className="w-8 h-8 text-purple-600" />
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Real-Time Tracking</h3>
-              <p className="text-gray-600">Track your delivery in real-time from pickup to drop-off</p>
-            </div>
-
-            <div className="text-center animate-fade-in">
-              <div className="w-16 h-16 bg-yellow-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Star className="w-8 h-8 text-yellow-600" />
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Rating System</h3>
-              <p className="text-gray-600">Rate and review to build trust in our community</p>
+              <h3 className="text-lg font-bold text-gray-900 mb-4">Real-Time Tracking</h3>
+              <p className="text-gray-600 mb-6">Track your delivery in real-time from pickup to drop-off</p>
+              <Button variant="outline" className="w-full">
+                <Download className="w-4 h-4 mr-2" />
+                Try Now
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Final CTA Section */}
       <section className="py-20 bg-tumaride-gradient relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
@@ -322,16 +330,17 @@ const Index = () => {
             <p className="text-xl text-green-100 mb-8">
               Join thousands of Kenyans already earning with TumaRide. Download the app today and start your journey.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
               <Button size="lg" className="bg-white text-tumaride-600 hover:bg-gray-100 text-lg px-8 py-3">
                 <Smartphone className="w-5 h-5 mr-2" />
                 Download on App Store
               </Button>
               <Button size="lg" className="bg-white text-tumaride-600 hover:bg-gray-100 text-lg px-8 py-3">
-                <Smartphone className="w-5 h-5 mr-2" />
+                <Play className="w-5 h-5 mr-2" />
                 Get it on Google Play
               </Button>
             </div>
+            <p className="text-green-200">Available for iOS and Android devices</p>
           </div>
         </div>
       </section>
@@ -350,13 +359,17 @@ const Index = () => {
                   <p className="text-sm text-gray-400">Value in every stop</p>
                 </div>
               </div>
-              <p className="text-gray-400">
+              <p className="text-gray-400 mb-6">
                 Connecting travelers and transforming journeys into income opportunities across Kenya.
               </p>
+              <Button className="bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
+                <Download className="w-4 h-4 mr-2" />
+                Download App
+              </Button>
             </div>
 
             <div>
-              <h4 className="text-lg font-bold mb-4">Quick Links</h4>
+              <h4 className="text-lg font-bold mb-4">App</h4>
               <ul className="space-y-2">
                 <li><a href="#" className="text-gray-400 hover:text-white transition-colors">How It Works</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Safety</a></li>
@@ -376,14 +389,14 @@ const Index = () => {
             </div>
 
             <div>
-              <h4 className="text-lg font-bold mb-4">Download</h4>
+              <h4 className="text-lg font-bold mb-4">Download TumaRide</h4>
               <div className="space-y-3">
                 <Button variant="outline" className="w-full justify-start border-gray-600 text-white hover:bg-gray-800">
                   <Smartphone className="w-4 h-4 mr-2" />
                   iOS App Store
                 </Button>
                 <Button variant="outline" className="w-full justify-start border-gray-600 text-white hover:bg-gray-800">
-                  <Smartphone className="w-4 h-4 mr-2" />
+                  <Play className="w-4 h-4 mr-2" />
                   Google Play Store
                 </Button>
               </div>
