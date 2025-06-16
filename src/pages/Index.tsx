@@ -2,8 +2,17 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Smartphone, CreditCard, Users, Star, Clock, Shield, Zap, Download, Play, Send } from "lucide-react";
+import WaitlistForm from "@/components/WaitlistForm";
+import LocationInput from "@/components/LocationInput";
+import DateTimeSelector from "@/components/DateTimeSelector";
+import AppDownloadButton from "@/components/AppDownloadButton";
+import { useState } from "react";
 
 const Index = () => {
+  const [destination, setDestination] = useState("");
+  const [selectedDate, setSelectedDate] = useState("today");
+  const [selectedTime, setSelectedTime] = useState("now");
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -19,16 +28,27 @@ const Index = () => {
             </div>
           </div>
           <div className="flex items-center space-x-4">
-            <Button className="bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
-              Join our waitlist
-            </Button>
+            <WaitlistForm destination={destination} selectedDate={selectedDate} selectedTime={selectedTime}>
+              <Button className="bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
+                Join our waitlist
+              </Button>
+            </WaitlistForm>
           </div>
         </div>
       </header>
 
-      {/* Hero Section - Similar to Moova */}
+      {/* Hero Section with Background */}
       <section className="py-20 lg:py-32 relative overflow-hidden">
-        <div className="container mx-auto px-4">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
+          style={{
+            backgroundImage: 'url("https://images.unsplash.com/photo-1469041797191-50ace28483c3?auto=format&fit=crop&w=1200&q=80")'
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/90 to-white/70"></div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-slide-in-left">
               <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight text-gray-900">
@@ -38,32 +58,26 @@ const Index = () => {
                 Whenever you're heading somewhere on public transport, earn money by helping others move things effortlessly.
               </p>
               
-              {/* Waitlist Form */}
-              <div className="bg-white rounded-lg border border-gray-200 p-6 mb-6 max-w-md">
+              {/* Enhanced Waitlist Form */}
+              <div className="bg-white rounded-lg border border-gray-200 p-6 mb-6 max-w-md shadow-lg">
                 <div className="space-y-4">
-                  <div className="flex items-center space-x-2">
-                    <MapPin className="w-5 h-5 text-gray-400" />
-                    <input 
-                      type="text" 
-                      placeholder="Where are you going?" 
-                      className="flex-1 border-none outline-none text-gray-900 placeholder-gray-500"
-                    />
-                    <Send className="w-5 h-5 text-tumaride-600" />
-                  </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="flex items-center space-x-2 bg-gray-50 p-3 rounded">
-                      <Clock className="w-5 h-5 text-gray-400" />
-                      <span className="text-gray-600">Today</span>
-                    </div>
-                    <div className="flex items-center space-x-2 bg-gray-50 p-3 rounded">
-                      <Clock className="w-5 h-5 text-gray-400" />
-                      <span className="text-gray-600">Now</span>
-                    </div>
-                  </div>
+                  <LocationInput
+                    value={destination}
+                    onChange={setDestination}
+                    placeholder="Where are you going?"
+                  />
+                  <DateTimeSelector
+                    selectedDate={selectedDate}
+                    selectedTime={selectedTime}
+                    onDateChange={setSelectedDate}
+                    onTimeChange={setSelectedTime}
+                  />
                 </div>
-                <Button className="w-full mt-4 bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
-                  Join our waitlist
-                </Button>
+                <WaitlistForm destination={destination} selectedDate={selectedDate} selectedTime={selectedTime}>
+                  <Button className="w-full mt-4 bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
+                    Join our waitlist
+                  </Button>
+                </WaitlistForm>
               </div>
               
               <p className="text-sm text-gray-500">
@@ -99,9 +113,9 @@ const Index = () => {
               <p className="text-xl text-green-100 mb-8">
                 We connect people who are already moving with those that need things to move
               </p>
-              <Button size="lg" className="bg-white text-tumaride-600 hover:bg-gray-100">
+              <AppDownloadButton size="lg" className="bg-white text-tumaride-600 hover:bg-gray-100">
                 Download TumaRide App
-              </Button>
+              </AppDownloadButton>
             </div>
             <div>
               <img 
@@ -126,9 +140,9 @@ const Index = () => {
                 <p className="text-gray-600 mb-6">
                   Earn extra money as you move—no bike or car required
                 </p>
-                <Button className="bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
+                <AppDownloadButton className="bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
                   Get App
-                </Button>
+                </AppDownloadButton>
               </div>
               <div className="flex justify-end">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
@@ -143,9 +157,9 @@ const Index = () => {
                 <p className="text-gray-600 mb-6">
                   Receive instant payouts after successful trips.
                 </p>
-                <Button className="bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
+                <AppDownloadButton className="bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
                   Get App
-                </Button>
+                </AppDownloadButton>
               </div>
               <div className="flex justify-end">
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
@@ -160,9 +174,9 @@ const Index = () => {
                 <p className="text-gray-600 mb-6">
                   No fixed schedule—pick up orders whenever you need to move
                 </p>
-                <Button className="bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
+                <AppDownloadButton className="bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
                   Get App
-                </Button>
+                </AppDownloadButton>
               </div>
               <div className="flex justify-end">
                 <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center">
@@ -192,9 +206,9 @@ const Index = () => {
               <p className="text-lg text-gray-600 mb-8">
                 Already going somewhere? Get matched with small delivery requests along your route and earn
               </p>
-              <Button size="lg" className="bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
+              <AppDownloadButton size="lg" className="bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
                 Download TumaRide App
-              </Button>
+              </AppDownloadButton>
             </div>
           </div>
         </div>
@@ -416,14 +430,14 @@ const Index = () => {
               Join thousands of Kenyans already earning with TumaRide. Download the app today and start your journey.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-              <Button size="lg" className="bg-white text-tumaride-600 hover:bg-gray-100 text-lg px-8 py-3">
+              <AppDownloadButton size="lg" className="bg-white text-tumaride-600 hover:bg-gray-100 text-lg px-8 py-3">
                 <Smartphone className="w-5 h-5 mr-2" />
                 Download on App Store
-              </Button>
-              <Button size="lg" className="bg-white text-tumaride-600 hover:bg-gray-100 text-lg px-8 py-3">
+              </AppDownloadButton>
+              <AppDownloadButton size="lg" className="bg-white text-tumaride-600 hover:bg-gray-100 text-lg px-8 py-3">
                 <Play className="w-5 h-5 mr-2" />
                 Get it on Google Play
-              </Button>
+              </AppDownloadButton>
             </div>
             <p className="text-green-200">Available for iOS and Android devices</p>
           </div>
