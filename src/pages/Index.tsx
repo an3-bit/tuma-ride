@@ -24,7 +24,7 @@ const Index = () => {
               <MapPin className="w-6 h-6 text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gray-900">TumaRide</h1>
+              <h1 className="text-xl font-bold text-green-700">TumaRide</h1>
               <p className="text-xs text-tumaride-600">Kila Safari Ina Thamani</p>
             </div>
           </div>
