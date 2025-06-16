@@ -25,7 +25,7 @@ const Index = () => {
             </div>
             <div>
               <h1 className="text-xl font-bold text-gray-900">TumaRide</h1>
-              <p className="text-xs text-tumaride-600">Value in every stop</p>
+              <p className="text-xs text-tumaride-600">Kila Safari Ina Thamani</p>
             </div>
           </div>
           <div className="flex items-center space-x-4">
