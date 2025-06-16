@@ -32,7 +32,7 @@ const Index = () => {
             <WaitlistForm destination={destination} selectedDate={selectedDate} selectedTime={selectedTime}>
               <Button className="bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
                 Join our waitlist
-              </Button>
+              </Button> 
             </WaitlistForm>
           </div>
         </div>
@@ -53,7 +53,7 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <img 
-                src="https://images.unsplash.com/photo-1452378174528-3090a4bba7b2?auto=format&fit=crop&w=600&q=80" 
+                src="tumaride4.jpeg" 
                 alt="Public transport in Kenya"
                 className="rounded-2xl shadow-lg w-full h-auto"
               />
@@ -147,7 +147,7 @@ const Index = () => {
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="h-48 bg-gradient-to-br from-blue-500 to-blue-600 relative">
                 <img 
-                  src="https://images.unsplash.com/photo-1452378174528-3090a4bba7b2?auto=format&fit=crop&w=400&q=80" 
+                  src="university_student.jpg" 
                   alt="University student"
                   className="w-full h-full object-cover opacity-80"
                 />
@@ -174,7 +174,7 @@ const Index = () => {
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="h-48 bg-gradient-to-br from-tumaride-500 to-tumaride-600 relative">
                 <img 
-                  src="https://images.unsplash.com/photo-1466721591366-2d5fba72006d?auto=format&fit=crop&w=400&q=80" 
+                  src="boda.jpg" 
                   alt="Boda rider"
                   className="w-full h-full object-cover opacity-80"
                 />
@@ -199,12 +199,15 @@ const Index = () => {
             </Card>
 
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="h-48 bg-gradient-to-br from-purple-500 to-purple-600 relative">
-                <div className="absolute top-4 right-4 bg-white rounded-full px-3 py-1 text-sm font-bold text-tumaride-600">
-                  Express
-                </div>
-              </div>
+              
+               
               <CardContent className="p-6">
+                
+                <img
+                  src="tumaride5.jpeg"
+                  alt="Business documents"
+                  className="w-full h-32 object-cover rounded-lg mb-4"
+                />
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Business Documents</h3>
                 <p className="text-gray-600 mb-4">
                   A businessperson sends urgent documents via a verified matatu to Nairobi.
@@ -349,11 +352,11 @@ const Index = () => {
             <div>
               <h4 className="text-lg font-bold mb-4">Download TumaRide</h4>
               <div className="space-y-3">
-                <AppDownloadButton variant="outline" className="w-full justify-start border-gray-600 text-white hover:bg-gray-800">
+                <AppDownloadButton variant="outline" className="bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
                   <Smartphone className="w-4 h-4 mr-2" />
                   iOS App Store
                 </AppDownloadButton>
-                <AppDownloadButton variant="outline" className="w-full justify-start border-gray-600 text-white hover:bg-gray-800">
+                <AppDownloadButton variant="outline" className="bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
                   <Play className="w-4 h-4 mr-2" />
                   Google Play Store
                 </AppDownloadButton>
@@ -362,7 +365,7 @@ const Index = () => {
           </div>
 
           <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 TumaRide. All rights reserved. | Privacy Policy | Terms of Service</p>
+            <p>&copy; 2025 TumaRide. All rights reserved. | Privacy Policy | Terms of Service</p>
           </div>
         </div>
       </footer>

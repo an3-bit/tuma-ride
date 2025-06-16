@@ -1,10 +1,10 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
-import { MapPin } from "lucide-react";
+import { MapPin, Download } from "lucide-react";
 import WaitlistForm from "@/components/WaitlistForm";
 import LocationInput from "@/components/LocationInput";
 import DateTimeSelector from "@/components/DateTimeSelector";
+import AppDownloadButton from "@/components/AppDownloadButton";
 
 const HeroSection = () => {
   const [destination, setDestination] = useState("");
@@ -12,62 +12,76 @@ const HeroSection = () => {
   const [selectedTime, setSelectedTime] = useState("now");
 
   return (
-    <section className="py-20 lg:py-32 relative overflow-hidden">
+    <section className="py-20 lg:py-32 relative overflow-hidden min-h-screen flex items-center justify-center">
       {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
-        style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1469041797191-50ace28483c3?auto=format&fit=crop&w=1200&q=80")'
-        }}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+        style={{ backgroundImage: 'url("tumaride1.jpg")' }}
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-white/90 to-white/70"></div>
-      
+
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="animate-slide-in-left">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight text-gray-900">
-              Monetize your Movement with TumaRide
-            </h1>
-            <p className="text-lg mb-8 text-gray-600 max-w-lg">
-              Whenever you're heading somewhere on public transport, earn money by helping others move things effortlessly.
-            </p>
-            
-            {/* Enhanced Waitlist Form */}
-            <div className="bg-white rounded-lg border border-gray-200 p-6 mb-6 max-w-md shadow-lg">
-              <div className="space-y-4">
-                <LocationInput
-                  value={destination}
-                  onChange={setDestination}
-                  placeholder="Where are you going?"
-                />
-                <DateTimeSelector
-                  selectedDate={selectedDate}
-                  selectedTime={selectedTime}
-                  onDateChange={setSelectedDate}
-                  onTimeChange={setSelectedTime}
-                />
-              </div>
-              <WaitlistForm destination={destination} selectedDate={selectedDate} selectedTime={selectedTime}>
-                <Button className="w-full mt-4 bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
-                  Join our waitlist
-                </Button>
-              </WaitlistForm>
+        <div className="flex flex-col items-center justify-center text-center animate-slide-in-left">
+          
+          {/* TumaRide Icon and Tagline */}
+          <div className="flex items-center space-x-2 mb-6">
+            <div className="w-10 h-10 bg-tumaride-gradient rounded-full flex items-center justify-center">
+              <MapPin className="w-6 h-6 text-white" />
             </div>
-            
-            <p className="text-sm text-gray-500">
-              Kila Safari Ina Thamani - Value in every stop
-            </p>
+            <div className="text-left">
+              <h1 className="text-xl font-bold text-gray-900">TumaRide</h1>
+              <p className="text-xs text-tumaride-600">Value in every stop</p>
+            </div>
           </div>
-          <div className="animate-slide-in-right">
-            <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1469041797191-50ace28483c3?auto=format&fit=crop&w=800&q=80" 
-                alt="African transportation"
-                className="rounded-2xl shadow-2xl w-full h-auto"
+
+          {/* Main Headline */}
+          <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight text-gray-900">
+            Monetize your Movement with TumaRide
+          </h1>
+
+          {/* Subheading */}
+          <p className="text-lg mb-8 text-gray-600 max-w-xl">
+            Whenever you're heading somewhere on public transport, earn money by helping others move things effortlessly.
+          </p>
+
+          {/* Waitlist Form */}
+          <div className="bg-white rounded-lg border border-gray-200 p-6 mb-6 max-w-md w-full shadow-lg">
+            <div className="space-y-4">
+              <LocationInput
+                value={destination}
+                onChange={setDestination}
+                placeholder="Where are you going?"
               />
-              <div className="absolute inset-0 bg-tumaride-600/20 rounded-2xl"></div>
+              <DateTimeSelector
+                selectedDate={selectedDate}
+                selectedTime={selectedTime}
+                onDateChange={setSelectedDate}
+                onTimeChange={setSelectedTime}
+              />
             </div>
+
+            <WaitlistForm
+              destination={destination}
+              selectedDate={selectedDate}
+              selectedTime={selectedTime}
+            >
+              <Button className="w-full mt-4 bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
+                Join our waitlist
+              </Button>
+            </WaitlistForm>
           </div>
+
+          {/* Download App Button */}
+          <div className="max-w-md w-full mb-6">
+            <AppDownloadButton className="w-full bg-tumaride-gradient text-white">
+              <Download className="w-4 h-4 mr-2" />
+              Download App
+            </AppDownloadButton>
+          </div>
+
+          {/* Footer Quote */}
+          <p className="text-sm text-gray-500">
+            Kila Safari Ina Thamani - Value in every stop
+          </p>
         </div>
       </div>
     </section>
