@@ -23,12 +23,12 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col items-center justify-center text-center animate-slide-in-left">
           
-          {/* TumaRide Logo */}
-          <div className="flex items-center space-x-2 mb-6">
+          {/* TumaRide Logo - Enhanced Size */}
+          <div className="flex items-center justify-center mb-8">
             <img 
               src="/lovable-uploads/e1de6065-45b8-455b-bcc3-19c9e6d39f02.png" 
               alt="TumaRide Logo" 
-              className="h-16 w-auto"
+              className="h-24 lg:h-32 w-auto drop-shadow-lg"
             />
           </div>
 

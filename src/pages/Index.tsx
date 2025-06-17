@@ -25,7 +25,7 @@ const Index = () => {
             <img 
               src="/lovable-uploads/e1de6065-45b8-455b-bcc3-19c9e6d39f02.png" 
               alt="TumaRide Logo" 
-              className="h-10 w-auto"
+              className="h-14 w-auto drop-shadow-md"
             />
           </div>
           <div className="flex items-center space-x-4">
@@ -325,11 +325,11 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <div className="flex items-center space-x-2 mb-4">
+              <div className="flex items-center space-x-2 mb-6">
                 <img 
                   src="/lovable-uploads/e1de6065-45b8-455b-bcc3-19c9e6d39f02.png" 
                   alt="TumaRide Logo" 
-                  className="h-10 w-auto"
+                  className="h-16 w-auto brightness-110 contrast-110"
                 />
               </div>
               <p className="text-gray-400 mb-6">
