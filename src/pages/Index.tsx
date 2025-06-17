@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Smartphone, CreditCard, Users, Star, Clock, Shield, Zap, Download, Play, Send } from "lucide-react";
@@ -9,6 +8,7 @@ import MoverRegistrationForm from "@/components/MoverRegistrationForm";
 import HeroSection from "@/components/HeroSection";
 import MarketplaceSection from "@/components/MarketplaceSection";
 import BenefitsSection from "@/components/BenefitsSection";
+import TumaRideLogo from "@/components/TumaRideLogo";
 import { useState } from "react";
 
 const Index = () => {
@@ -22,11 +22,7 @@ const Index = () => {
       <header className="bg-white border-b border-gray-100 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <img 
-              src="/lovable-uploads/e1de6065-45b8-455b-bcc3-19c9e6d39f02.png" 
-              alt="TumaRide Logo" 
-              className="h-14 w-auto drop-shadow-md"
-            />
+            <TumaRideLogo size="md" className="drop-shadow-md" />
           </div>
           <div className="flex items-center space-x-4">
             <WaitlistForm destination={destination} selectedDate={selectedDate} selectedTime={selectedTime}>
@@ -326,11 +322,7 @@ const Index = () => {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-6">
-                <img 
-                  src="/lovable-uploads/e1de6065-45b8-455b-bcc3-19c9e6d39f02.png" 
-                  alt="TumaRide Logo" 
-                  className="h-16 w-auto brightness-110 contrast-110"
-                />
+                <TumaRideLogo size="lg" className="brightness-150 contrast-125" />
               </div>
               <p className="text-gray-400 mb-6">
                 Connecting travelers and transforming journeys into income opportunities across Kenya.
@@ -341,6 +333,7 @@ const Index = () => {
               </AppDownloadButton>
             </div>
 
+            {/* Company Links */}
             <div>
               <h4 className="text-lg font-bold mb-4">App</h4>
               <ul className="space-y-2">
