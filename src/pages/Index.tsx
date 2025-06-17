@@ -22,13 +22,11 @@ const Index = () => {
       <header className="bg-white border-b border-gray-100 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-tumaride-gradient rounded-full flex items-center justify-center">
-              <MapPin className="w-6 h-6 text-white" />
-            </div>
-            <div>
-              <h1 className="text-xl font-bold text-green-700">TumaRide</h1>
-              <p className="text-xs text-tumaride-600">Kila Safari Ina Thamani</p>
-            </div>
+            <img 
+              src="/lovable-uploads/e1de6065-45b8-455b-bcc3-19c9e6d39f02.png" 
+              alt="TumaRide Logo" 
+              className="h-10 w-auto"
+            />
           </div>
           <div className="flex items-center space-x-4">
             <WaitlistForm destination={destination} selectedDate={selectedDate} selectedTime={selectedTime}>
@@ -328,13 +326,11 @@ const Index = () => {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <div className="w-10 h-10 bg-tumaride-gradient rounded-full flex items-center justify-center">
-                  <MapPin className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold">TumaRide</h3>
-                  <p className="text-sm text-gray-400">Value in every stop</p>
-                </div>
+                <img 
+                  src="/lovable-uploads/e1de6065-45b8-455b-bcc3-19c9e6d39f02.png" 
+                  alt="TumaRide Logo" 
+                  className="h-10 w-auto"
+                />
               </div>
               <p className="text-gray-400 mb-6">
                 Connecting travelers and transforming journeys into income opportunities across Kenya.
