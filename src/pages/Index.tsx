@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { MapPin, Smartphone, CreditCard, Users, Star, Clock, Shield, Zap, Download, Play, Send } from "lucide-react";
+import { MapPin, Smartphone, CreditCard, Users, Star, Clock, Shield, Zap, Download, Play, Send, Menu, X } from "lucide-react";
 import WaitlistForm from "@/components/WaitlistForm";
 import AppDownloadButton from "@/components/AppDownloadButton";
 import SenderRegistrationForm from "@/components/SenderRegistrationForm";
@@ -15,6 +15,7 @@ const Index = () => {
   const [destination, setDestination] = useState("");
   const [selectedDate, setSelectedDate] = useState("today");
   const [selectedTime, setSelectedTime] = useState("now");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // New state for mobile menu
 
   return (
     <div className="min-h-screen bg-white">
@@ -24,14 +25,14 @@ const Index = () => {
           <div className="flex items-center space-x-2">
             <img src="logo1.jpg" alt="TumaRide Logo" className="h-10 w-auto" />
           </div>
-          <div className="flex items-center space-x-4">
+
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center space-x-4">
             <WaitlistForm destination={destination} selectedDate={selectedDate} selectedTime={selectedTime}>
               <Button className="bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
                 Join our waitlist
-              </Button> 
+              </Button>
             </WaitlistForm>
-          </div>
-          <div className="hidden lg:flex items-center space-x-4">
             <SenderRegistrationForm>
               <Button className="bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
                 <Smartphone className="w-5 h-5 mr-2" />
@@ -45,7 +46,65 @@ const Index = () => {
               </Button>
             </MoverRegistrationForm>
           </div>
+
+          {/* Mobile Menu Button (Hamburger) */}
+          <div className="lg:hidden flex items-center">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="text-gray-900 hover:bg-gray-100"
+            >
+              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </Button>
+          </div>
         </div>
+
+        {/* Mobile Navigation Menu */}
+        {isMobileMenuOpen && (
+          <div className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-40" onClick={() => setIsMobileMenuOpen(false)}>
+            <div className="absolute top-0 right-0 w-64 h-full bg-white shadow-lg p-6 animate-slide-in-right" onClick={(e) => e.stopPropagation()}>
+              <div className="flex justify-end mb-6">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-gray-900 hover:bg-gray-100"
+                >
+                  <X className="h-6 w-6" />
+                </Button>
+              </div>
+              <nav className="flex flex-col space-y-4">
+                <WaitlistForm destination={destination} selectedDate={selectedDate} selectedTime={selectedTime}>
+                  <Button className="w-full bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
+                    Join our waitlist
+                  </Button>
+                </WaitlistForm>
+                <SenderRegistrationForm>
+                  <Button className="w-full bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
+                    <Smartphone className="w-5 h-5 mr-2" />
+                    Download Sender App
+                  </Button>
+                </SenderRegistrationForm>
+                <MoverRegistrationForm>
+                  <Button className="w-full bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
+                    <Smartphone className="w-5 h-5 mr-2" />
+                    Download Mover App
+                  </Button>
+                </MoverRegistrationForm>
+                {/* Add any other relevant navigation links here */}
+                <a href="#" className="text-gray-700 hover:text-tumaride-600 py-2">How It Works</a>
+                <a href="#" className="text-gray-700 hover:text-tumaride-600 py-2">Safety</a>
+                <a href="#" className="text-gray-700 hover:text-tumaride-600 py-2">Pricing</a>
+                <a href="#" className="text-gray-700 hover:text-tumaride-600 py-2">Support</a>
+                <a href="#" className="text-gray-700 hover:text-tumaride-600 py-2">About Us</a>
+                <a href="#" className="text-gray-700 hover:text-tumaride-600 py-2">Careers</a>
+                <a href="#" className="text-gray-700 hover:text-tumaride-600 py-2">Blog</a>
+                <a href="#" className="text-gray-700 hover:text-tumaride-600 py-2">Contact</a>
+              </nav>
+            </div>
+          </div>
+        )}
       </header>
 
       {/* Hero Section */}
@@ -62,8 +121,8 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <img 
-                src="tumaride4.jpeg" 
+              <img
+                src="tumaride4.jpeg"
                 alt="Public transport in Kenya"
                 className="rounded-2xl shadow-lg w-full h-auto"
               />
@@ -156,8 +215,8 @@ const Index = () => {
           <div className="grid lg:grid-cols-3 gap-8">
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="h-48 bg-gradient-to-br from-blue-500 to-blue-600 relative">
-                <img 
-                  src="university_student.jpg" 
+                <img
+                  src="university_student.jpg"
                   alt="University student"
                   className="w-full h-full object-cover opacity-80"
                 />
@@ -183,8 +242,8 @@ const Index = () => {
 
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
               <div className="h-48 bg-gradient-to-br from-tumaride-500 to-tumaride-600 relative">
-                <img 
-                  src="boda.jpg" 
+                <img
+                  src="boda.jpg"
                   alt="Boda rider"
                   className="w-full h-full object-cover opacity-80"
                 />
@@ -209,10 +268,10 @@ const Index = () => {
             </Card>
 
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              
-               
+
+
               <CardContent className="p-6">
-                
+
                 <img
                   src="tumaride5.jpeg"
                   alt="Business documents"
@@ -323,7 +382,7 @@ const Index = () => {
             <div>
               <div className="flex items-center space-x-2 mb-6">
                 <img src="logo1.jpg" alt="TumaRide Logo" className="h-10 w-auto" />
-                
+
               </div>
               <p className="text-gray-400 mb-6">
                 Connecting travelers and transforming journeys into income opportunities across Kenya.
