@@ -17,7 +17,7 @@ const HeroSection = () => {
     <section className="py-20 lg:py-32 relative overflow-hidden min-h-screen flex items-center justify-center">
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat  opacity-10"
         style={{ backgroundImage: 'url("tumaride1.jpg")' }}
       />
 
@@ -26,16 +26,16 @@ const HeroSection = () => {
           
           {/* TumaRide Logo - Enhanced Custom Logo */}
           <div className="flex items-center justify-center mb-8">
-            <TumaRideLogo size="xl" className="drop-shadow-lg" />
+           <img src="logo1.jpg" alt="TumaRide Logo" className="h-10 w-auto" />
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight text-gray-900">
+          <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight text-green-700">
             Monetize your Movement with TumaRide
           </h1>
 
           {/* Subheading */}
-          <p className="text-lg mb-8 text-gray-600 max-w-xl">
+          <p className="text-lg mb-8 text-green-700 max-w-xl">
             Whenever you're heading somewhere on public transport, earn money by helping others move things effortlessly.
           </p>
 
@@ -75,7 +75,7 @@ const HeroSection = () => {
           </div>
 
           {/* Footer Quote */}
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-green-700 mt-6">
             Kila Safari Ina Thamani - Value in every stop
           </p>
         </div>

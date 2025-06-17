@@ -22,7 +22,7 @@ const Index = () => {
       <header className="bg-white border-b border-gray-100 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <TumaRideLogo size="md" className="drop-shadow-md" />
+            <img src="logo1.jpg" alt="TumaRide Logo" className="h-10 w-auto" />
           </div>
           <div className="flex items-center space-x-4">
             <WaitlistForm destination={destination} selectedDate={selectedDate} selectedTime={selectedTime}>
@@ -322,7 +322,8 @@ const Index = () => {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-6">
-                <TumaRideLogo size="lg" className="brightness-150 contrast-125" />
+                <img src="logo1.jpg" alt="TumaRide Logo" className="h-10 w-auto" />
+                
               </div>
               <p className="text-gray-400 mb-6">
                 Connecting travelers and transforming journeys into income opportunities across Kenya.
