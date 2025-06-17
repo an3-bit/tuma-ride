@@ -4,6 +4,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Smartphone, CreditCard, Users, Star, Clock, Shield, Zap, Download, Play, Send } from "lucide-react";
 import WaitlistForm from "@/components/WaitlistForm";
 import AppDownloadButton from "@/components/AppDownloadButton";
+import SenderRegistrationForm from "@/components/SenderRegistrationForm";
+import MoverRegistrationForm from "@/components/MoverRegistrationForm";
 import HeroSection from "@/components/HeroSection";
 import MarketplaceSection from "@/components/MarketplaceSection";
 import BenefitsSection from "@/components/BenefitsSection";
@@ -36,14 +38,18 @@ const Index = () => {
             </WaitlistForm>
           </div>
           <div className="hidden lg:flex items-center space-x-4">
-            <AppDownloadButton className="bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
-              <Smartphone className="w-5 h-5 mr-2" />
-              Download Sender App
-            </AppDownloadButton>
-           <AppDownloadButton className="bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
-              <Smartphone className="w-5 h-5 mr-2" />
-              Download Mover App
-            </AppDownloadButton>
+            <SenderRegistrationForm>
+              <Button className="bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
+                <Smartphone className="w-5 h-5 mr-2" />
+                Download Sender App
+              </Button>
+            </SenderRegistrationForm>
+            <MoverRegistrationForm>
+              <Button className="bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
+                <Smartphone className="w-5 h-5 mr-2" />
+                Download Mover App
+              </Button>
+            </MoverRegistrationForm>
           </div>
         </div>
       </header>

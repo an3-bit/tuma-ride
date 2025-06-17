@@ -292,6 +292,60 @@ export type Database = {
           },
         ]
       }
+      movers: {
+        Row: {
+          additional_info: string | null
+          carrying_capacity: string | null
+          created_at: string | null
+          email: string
+          experience_level: string | null
+          full_name: string
+          id: string
+          id_number: string | null
+          license_number: string | null
+          location: string
+          phone: string
+          preferred_routes: string | null
+          transport_type: string
+          updated_at: string | null
+          vehicle_details: string | null
+        }
+        Insert: {
+          additional_info?: string | null
+          carrying_capacity?: string | null
+          created_at?: string | null
+          email: string
+          experience_level?: string | null
+          full_name: string
+          id?: string
+          id_number?: string | null
+          license_number?: string | null
+          location: string
+          phone: string
+          preferred_routes?: string | null
+          transport_type: string
+          updated_at?: string | null
+          vehicle_details?: string | null
+        }
+        Update: {
+          additional_info?: string | null
+          carrying_capacity?: string | null
+          created_at?: string | null
+          email?: string
+          experience_level?: string | null
+          full_name?: string
+          id?: string
+          id_number?: string | null
+          license_number?: string | null
+          location?: string
+          phone?: string
+          preferred_routes?: string | null
+          transport_type?: string
+          updated_at?: string | null
+          vehicle_details?: string | null
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           created_at: string | null
@@ -386,6 +440,48 @@ export type Database = {
           school_type?: string
           sub_county?: string
           total_students?: number | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
+      senders: {
+        Row: {
+          additional_info: string | null
+          created_at: string | null
+          email: string
+          experience_level: string | null
+          full_name: string
+          id: string
+          id_number: string | null
+          location: string
+          phone: string
+          preferred_routes: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          additional_info?: string | null
+          created_at?: string | null
+          email: string
+          experience_level?: string | null
+          full_name: string
+          id?: string
+          id_number?: string | null
+          location: string
+          phone: string
+          preferred_routes?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          additional_info?: string | null
+          created_at?: string | null
+          email?: string
+          experience_level?: string | null
+          full_name?: string
+          id?: string
+          id_number?: string | null
+          location?: string
+          phone?: string
+          preferred_routes?: string | null
           updated_at?: string | null
         }
         Relationships: []
@@ -526,6 +622,7 @@ export type Database = {
       campaign_type: "mpesa" | "sms" | "email"
       delivery_status: "pending" | "in_transit" | "delivered" | "cancelled"
       user_role: "admin" | "school_admin" | "volunteer"
+      user_type: "sender" | "mover"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -644,6 +741,7 @@ export const Constants = {
       campaign_type: ["mpesa", "sms", "email"],
       delivery_status: ["pending", "in_transit", "delivered", "cancelled"],
       user_role: ["admin", "school_admin", "volunteer"],
+      user_type: ["sender", "mover"],
     },
   },
 } as const
