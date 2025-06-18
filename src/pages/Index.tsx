@@ -1,3 +1,4 @@
+
 import HeroSection from "@/components/HeroSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import MarketplaceSection from "@/components/MarketplaceSection";
@@ -5,6 +6,8 @@ import MoverRegistrationForm from "@/components/MoverRegistrationForm";
 import SenderRegistrationForm from "@/components/SenderRegistrationForm";
 import DesktopNavigation from "@/components/DesktopNavigation";
 import MobileNavigation from "@/components/MobileNavigation";
+import { Button } from "@/components/ui/button";
+import { Send, Truck } from "lucide-react";
 
 const Index = () => {
   return (
@@ -77,11 +80,32 @@ const Index = () => {
             </div>
             
             <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-              <div>
-                <SenderRegistrationForm />
+              <div className="bg-white rounded-lg p-6 shadow-md">
+                <div className="text-center mb-6">
+                  <Send className="w-12 h-12 mx-auto mb-4 text-green-600" />
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Become a Sender</h3>
+                  <p className="text-gray-600">Send packages with trusted movers on their regular routes</p>
+                </div>
+                <SenderRegistrationForm>
+                  <Button className="w-full bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
+                    <Send className="w-4 h-4 mr-2" />
+                    Register as Sender
+                  </Button>
+                </SenderRegistrationForm>
               </div>
-              <div>
-                <MoverRegistrationForm />
+              
+              <div className="bg-white rounded-lg p-6 shadow-md">
+                <div className="text-center mb-6">
+                  <Truck className="w-12 h-12 mx-auto mb-4 text-green-600" />
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Become a Mover</h3>
+                  <p className="text-gray-600">Earn money by delivering packages along your travel routes</p>
+                </div>
+                <MoverRegistrationForm>
+                  <Button className="w-full bg-tumaride-gradient hover:bg-tumaride-gradient-dark text-white">
+                    <Truck className="w-4 h-4 mr-2" />
+                    Register as Mover
+                  </Button>
+                </MoverRegistrationForm>
               </div>
             </div>
           </div>
