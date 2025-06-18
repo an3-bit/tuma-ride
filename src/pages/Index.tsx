@@ -1,4 +1,3 @@
-
 import HeroSection from "@/components/HeroSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import MarketplaceSection from "@/components/MarketplaceSection";
@@ -78,8 +77,12 @@ const Index = () => {
             </div>
             
             <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-              <SenderRegistrationForm />
-              <MoverRegistrationForm />
+              <div>
+                <SenderRegistrationForm />
+              </div>
+              <div>
+                <MoverRegistrationForm />
+              </div>
             </div>
           </div>
         </section>
