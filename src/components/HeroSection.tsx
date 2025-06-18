@@ -23,6 +23,11 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col items-center justify-center text-center animate-slide-in-left">
           
+          <img
+            src="logo1.jpg"
+            alt="TumaRide Logo"
+            
+          />
           {/* Main Headline */}
           <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight text-green-700">
             Monetize your Movement with TumaRide

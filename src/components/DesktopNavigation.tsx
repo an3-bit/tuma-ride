@@ -5,6 +5,7 @@ import WaitlistForm from "@/components/WaitlistForm";
 import AppDownloadButton from "@/components/AppDownloadButton";
 import TumaRideLogo from "@/components/TumaRideLogo";
 import { Download, UserPlus, Truck } from "lucide-react";
+import BenefitsSection from './BenefitsSection';
 
 const DesktopNavigation = () => {
   const scrollToSection = (sectionId: string) => {
@@ -17,7 +18,11 @@ const DesktopNavigation = () => {
   return (
     <nav className="hidden lg:flex items-center justify-between px-6 py-4 bg-white shadow-sm fixed top-0 left-0 right-0 z-50">
       <div className="flex items-center space-x-2">
-        <TumaRideLogo />
+        <img
+          src="logo1.jpg"
+          alt="TumaRide Logo"
+          className="h-8 w-auto"
+        />
       </div>
       
       <div className="flex items-center space-x-8">
@@ -27,8 +32,8 @@ const DesktopNavigation = () => {
         >
           How It Works
         </button>
-        <button
-          onClick={() => scrollToSection('benefits')}
+        {/* <button
+          onClick={() => scrollToSection('BenefitsSection')}
           className="text-gray-700 hover:text-green-600 font-medium transition-colors"
         >
           Benefits
@@ -38,7 +43,7 @@ const DesktopNavigation = () => {
           className="text-gray-700 hover:text-green-600 font-medium transition-colors"
         >
           Marketplace
-        </button>
+        </button> */}
         <button
           onClick={() => scrollToSection('register')}
           className="text-gray-700 hover:text-green-600 font-medium transition-colors"

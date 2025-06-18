@@ -31,7 +31,11 @@ const MobileNavigation = () => {
         <SheetContent side="right" className="w-80">
           <div className="flex flex-col space-y-6 mt-8">
             <div className="flex items-center justify-between">
-              <TumaRideLogo />
+             <img
+                src="logo1.jpg"
+                alt="TumaRide Logo"
+                className="h-8 w-auto"
+              />
               <Button variant="ghost" size="sm" onClick={() => setIsOpen(false)}>
                 <X className="h-5 w-5" />
               </Button>
@@ -44,7 +48,7 @@ const MobileNavigation = () => {
               >
                 How It Works
               </button>
-              <button
+              {/* <button
                 onClick={() => scrollToSection('benefits')}
                 className="text-left text-gray-700 hover:text-green-600 font-medium py-2 transition-colors"
               >
@@ -55,7 +59,7 @@ const MobileNavigation = () => {
                 className="text-left text-gray-700 hover:text-green-600 font-medium py-2 transition-colors"
               >
                 Marketplace
-              </button>
+              </button> */}
               <button
                 onClick={() => scrollToSection('register')}
                 className="text-left text-gray-700 hover:text-green-600 font-medium py-2 transition-colors"

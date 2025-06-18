@@ -116,11 +116,15 @@ const Index = () => {
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-4 gap-8">
               <div className="md:col-span-2">
-                <h3 className="text-xl font-bold mb-4">TumaRide</h3>
+                <img
+                  src="logo1.jpg"
+                  alt="TumaRide Logo"
+                  className="h-12 w-auto mb-4"
+                />
                 <p className="text-gray-400 mb-4">
                   Monetize your movement. Connect people who need to send things with those who are already traveling.
                 </p>
-                <p className="text-sm text-gray-500">
+                <p className="text-sm text-green-700">
                   Kila Safari Ina Thamani - Value in every stop
                 </p>
               </div>
@@ -147,7 +151,7 @@ const Index = () => {
             </div>
             
             <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-              <p>&copy; 2024 TumaRide. All rights reserved.</p>
+              <p>&copy; 2025 TumaRide. All rights reserved.</p>
             </div>
           </div>
         </footer>
