@@ -8,6 +8,7 @@ import DesktopNavigation from "@/components/DesktopNavigation";
 import MobileNavigation from "@/components/MobileNavigation";
 import { Button } from "@/components/ui/button";
 import { Send, Truck } from "lucide-react";
+import AppDownloadButton from "@/components/AppDownloadButton";
 
 const Index = () => {
   return (
@@ -147,6 +148,16 @@ const Index = () => {
                   <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
                   <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
                 </ul>
+              </div>
+              <div>
+                <AppDownloadButton className="w-full bg-tumaride-gradient text-white hover:bg-tumaride-gradient-dark mb-4">
+                  <img src="app store_icon.png" alt="Download on the App Store" className="w-6 h-6 mr-2 inline-block" />
+                  Download App
+                </AppDownloadButton>
+                <AppDownloadButton className="w-full bg-tumaride-gradient text-white hover:bg-tumaride-gradient-dark">
+                  <img src="google_playstore_icon.png" alt="Get it on Google Play" className="w-6 h-6 mr-2 inline-block" />
+                  Download App
+                </AppDownloadButton>
               </div>
             </div>
             
