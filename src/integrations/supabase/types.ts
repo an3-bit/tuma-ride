@@ -590,6 +590,48 @@ export type Database = {
           },
         ]
       }
+      waitlist: {
+        Row: {
+          created_at: string | null
+          destination: string | null
+          email: string
+          expected_use: string | null
+          full_name: string
+          id: string
+          location: string
+          phone: string
+          preferred_date: string | null
+          preferred_time: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          destination?: string | null
+          email: string
+          expected_use?: string | null
+          full_name: string
+          id?: string
+          location: string
+          phone: string
+          preferred_date?: string | null
+          preferred_time?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          destination?: string | null
+          email?: string
+          expected_use?: string | null
+          full_name?: string
+          id?: string
+          location?: string
+          phone?: string
+          preferred_date?: string | null
+          preferred_time?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

@@ -6,7 +6,6 @@ import WaitlistForm from "@/components/WaitlistForm";
 import LocationInput from "@/components/LocationInput";
 import DateTimeSelector from "@/components/DateTimeSelector";
 import AppDownloadButton from "@/components/AppDownloadButton";
-import TumaRideLogo from "@/components/TumaRideLogo";
 
 const HeroSection = () => {
   const [destination, setDestination] = useState("");
@@ -14,33 +13,28 @@ const HeroSection = () => {
   const [selectedTime, setSelectedTime] = useState("now");
 
   return (
-    <section className="py-20 lg:py-32 relative overflow-hidden min-h-screen flex items-center justify-center">
+    <section className="py-12 lg:py-20 xl:py-32 relative overflow-hidden min-h-screen flex items-center justify-center">
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat  opacity-10"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
         style={{ backgroundImage: 'url("tumaride1.jpg")' }}
       />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col items-center justify-center text-center animate-slide-in-left">
           
-          {/* TumaRide Logo - Enhanced Custom Logo */}
-          <div className="flex items-center justify-center mb-8">
-           <img src="logo1.jpg" alt="TumaRide Logo" className="h-10 w-auto" />
-          </div>
-
           {/* Main Headline */}
-          <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight text-green-700">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight text-green-700">
             Monetize your Movement with TumaRide
           </h1>
 
           {/* Subheading */}
-          <p className="text-lg mb-8 text-green-700 max-w-xl">
+          <p className="text-base sm:text-lg lg:text-xl mb-8 text-green-700 max-w-xl px-4">
             Whenever you're heading somewhere on public transport, earn money by helping others move things effortlessly.
           </p>
 
           {/* Waitlist Form */}
-          <div className="bg-white rounded-lg border border-gray-200 p-6 mb-6 max-w-md w-full shadow-lg">
+          <div className="bg-white rounded-lg border border-gray-200 p-4 sm:p-6 mb-6 max-w-md w-full mx-4 shadow-lg">
             <div className="space-y-4">
               <LocationInput
                 value={destination}
@@ -67,7 +61,7 @@ const HeroSection = () => {
           </div>
 
           {/* Download App Button */}
-          <div className="max-w-md w-full mb-6">
+          <div className="max-w-md w-full mb-6 px-4">
             <AppDownloadButton className="w-full bg-tumaride-gradient text-white">
               <Download className="w-4 h-4 mr-2" />
               Download App
@@ -75,7 +69,7 @@ const HeroSection = () => {
           </div>
 
           {/* Footer Quote */}
-          <p className="text-sm text-green-700 mt-6">
+          <p className="text-sm sm:text-base text-green-700 mt-6 px-4">
             Kila Safari Ina Thamani - Value in every stop
           </p>
         </div>

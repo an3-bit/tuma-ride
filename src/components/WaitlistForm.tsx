@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import {
@@ -20,6 +21,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useForm } from "react-hook-form";
 import { toast } from "@/components/ui/use-toast";
 import { MapPin, Clock, Send } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 interface WaitlistFormData {
   fullName: string;
@@ -60,27 +62,38 @@ const WaitlistForm = ({
 
     try {
       const waitlistData = {
-        ...data,
-        destination: destination || 'Not specified',
-        preferredDate: selectedDate || 'Not specified',
-        preferredTime: selectedTime || 'Not specified',
-        submittedAt: new Date().toISOString(),
+        full_name: data.fullName,
+        email: data.email,
+        phone: data.phone,
+        location: data.location,
+        expected_use: data.expectedUse || null,
+        destination: destination || null,
+        preferred_date: selectedDate || null,
+        preferred_time: selectedTime || null,
       };
 
-      console.log('Waitlist submission:', waitlistData);
+      console.log('Submitting waitlist data:', waitlistData);
 
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      const { error } = await supabase
+        .from('waitlist')
+        .insert([waitlistData]);
+
+      if (error) {
+        console.error('Supabase error:', error);
+        throw error;
+      }
 
       toast({
-        title: "Welcome to TumaRide!",
-        description: "Thank you for joining our waitlist. We'll notify you as soon as the app is ready!",
+        title: "Thank you for your interest!",
+        description: "We will notify you once the app is done. Welcome to TumaRide!",
       });
 
       form.reset();
       setIsOpen(false);
     } catch (error) {
+      console.error('Registration error:', error);
       toast({
-        title: "Submission failed",
+        title: "Registration failed",
         description: "Please try again later.",
         variant: "destructive",
       });
